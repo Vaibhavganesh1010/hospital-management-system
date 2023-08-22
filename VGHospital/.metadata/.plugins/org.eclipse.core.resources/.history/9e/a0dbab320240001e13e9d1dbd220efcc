@@ -1,0 +1,47 @@
+package HMS.VGHospital.Controller;
+
+import org.springframework.stereotype.Controller;
+
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class VGHController {
+
+	@RequestMapping("/")
+	public String name() {
+		return "home";
+	}
+	@RequestMapping("/drlogin")
+	public String drlogin() {
+		return "Doctor";
+	}
+
+	@RequestMapping("/doctorcreateaccount")
+	public String doctorcreateaccount() {
+		return "createdoctoraccount";
+	}
+	
+	
+	@RequestMapping("/Hpage")
+	public String Hpage() {
+		return "homepage";
+	}
+	
+	@RequestMapping("/stafflogin")
+	public String stafflogin() {
+		return "stafflogin";
+	}
+	
+	
+	@RequestMapping("/staffcreateaccount")
+	public String staffcreateaccount() {
+		return "createstaffaccount";
+	}
+	
+	@RequestMapping("/creatBA")
+	public String createBA() {
+		return "CreateBA";
+	}
+}
+

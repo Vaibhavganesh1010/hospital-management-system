@@ -1,0 +1,17 @@
+package HMS.VGHospital.Service;
+
+import org.springframework.stereotype.Service;
+
+import HMS.VGHospital.Dao.VGHDao;
+import HMS.VGHospital.Model.Bookappointment;
+
+@Service
+public class VGHService {
+
+	public Bookappointment Bookappoiment(Bookappointment ba) {
+		VGHDao dao = new VGHDao();
+		return dao.Bookappoiment(ba);
+		
+	}
+	
+}

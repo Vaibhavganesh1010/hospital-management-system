@@ -1,0 +1,66 @@
+package HMS.VGHospital.Dao;
+
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.web.servlet.ModelAndView;
+
+import HMS.VGHospital.Model.Bookappointment;
+import HMS.VGHospital.Model.CreateDoctorAccount;
+import HMS.VGHospital.Model.CreateStaffAccount;
+import HMS.VGHospital.Service.VGHService;
+import antlr.collections.List;
+
+
+@Repository
+public class VGHDao {
+
+	@Autowired
+	SessionFactory sf;
+	
+	public void booka(Bookappointment ba) {
+		org.hibernate.Session ss = sf.openSession();
+		org.hibernate.Transaction tr = ss.beginTransaction();
+		ss.save(ba);
+		tr.commit();
+	}
+
+	public void createdoctoraccount(CreateDoctorAccount cd) {
+	org.hibernate.Session ss =sf.openSession();
+	 org.hibernate.Transaction tr = ss.beginTransaction();
+	ss.save(cd);
+	tr.commit();
+	}
+
+	public void createstaffaccount(CreateStaffAccount cs) {
+		org.hibernate.Session ss =sf.openSession();
+		 org.hibernate.Transaction tr = ss.beginTransaction();
+		ss.save(cs);
+		tr.commit();
+		
+	}
+
+	public java.util.List<CreateDoctorAccount> doctorlogin(CreateDoctorAccount cd) {
+		org.hibernate.Session ss = sf.openSession();
+		org.hibernate.Transaction tr = ss.beginTransaction();
+	    Criteria criteria = ss.createCriteria(CreateDoctorAccount.class);
+	    java.util.List<CreateDoctorAccount> li =  criteria.list();
+		tr.commit();
+		ss.close();
+		return li;
+	}
+
+	public java.util.List<CreateStaffAccount> loginstaff(CreateStaffAccount cs) {
+		org.hibernate.Session ss = sf.openSession();
+		org.hibernate.Transaction tr = ss.beginTransaction();
+		Criteria criteria = ss.createCriteria(CreateStaffAccount.class);
+	    java.util.List<CreateStaffAccount> li =	criteria.list();
+		
+	    tr.commit();
+	    ss.close();
+	    return li;
+	}
+}

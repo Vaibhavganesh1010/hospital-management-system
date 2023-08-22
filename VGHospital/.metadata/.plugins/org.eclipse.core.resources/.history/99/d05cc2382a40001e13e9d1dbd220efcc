@@ -1,0 +1,52 @@
+package HMS.VGHospital.Dao;
+
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.web.servlet.ModelAndView;
+
+import HMS.VGHospital.Model.Bookappointment;
+import HMS.VGHospital.Model.CreateDoctorAccount;
+import HMS.VGHospital.Model.CreateStaffAccount;
+import HMS.VGHospital.Service.VGHService;
+import jakarta.transaction.Transaction;
+import jakarta.websocket.Session;
+
+@Repository
+public class VGHDao {
+
+	@Autowired
+	SessionFactory sf;
+	
+	public Bookappointment Bookappoiment(Bookappointment ba) {
+		org.hibernate.Session ss = sf.openSession();
+		org.hibernate.Transaction tr = ss.beginTransaction();
+		ss.save(ba);
+		System.out.println(ba);
+		tr.commit();
+		ss.close();
+		return ba;
+	}
+
+	public void booka(Bookappointment ba) {
+		org.hibernate.Session ss = sf.openSession();
+		org.hibernate.Transaction tr = ss.beginTransaction();
+		ss.save(ba);
+		tr.commit();
+	}
+
+	public void createdoctoraccount(CreateDoctorAccount cd) {
+	org.hibernate.Session ss =sf.openSession();
+	 org.hibernate.Transaction tr = ss.beginTransaction();
+	ss.save(cd);
+	tr.commit();
+	}
+
+	public void createstaffaccount(CreateStaffAccount cs) {
+		org.hibernate.Session ss =sf.openSession();
+		 org.hibernate.Transaction tr = ss.beginTransaction();
+		ss.save(cs);
+		tr.commit();
+		
+	}
+}

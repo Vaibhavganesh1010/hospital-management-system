@@ -1,0 +1,5 @@
+package HMS.VGHospital.Model;
+
+public class Bookappointment {
+
+}

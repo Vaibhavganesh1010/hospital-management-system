@@ -1,0 +1,14 @@
+package HMS.VGHospital.Dao;
+
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import jakarta.websocket.Session;
+
+@Repository
+public class VGHDao {
+
+	@Autowired
+	SessionFactory sf;
+}

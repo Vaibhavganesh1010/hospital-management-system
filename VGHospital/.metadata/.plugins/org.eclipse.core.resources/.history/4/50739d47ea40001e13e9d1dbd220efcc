@@ -1,0 +1,40 @@
+package extra1;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.TreeSet;
+
+public class remove {
+
+	public static void main(String[] args) {
+		
+		ArrayList<Integer> al = new ArrayList();
+		al.add(10);
+		al.add(20);
+		al.add(30);
+		al.add(40);
+		al.add(50);
+		al.add(10);
+		al.add(30);
+		
+		ArrayList<Character> ac = new ArrayList();
+		ac.add('a');
+		ac.add('a');
+		ac.add('b');
+		ac.add('c');
+		ac.add('b');
+		
+		ArrayList<String> as = new ArrayList();
+	   as.add("vaibhav");
+	   as.add("ganesh");
+	   as.add("vaibhav");
+	   as.add("patil");
+	   as.add("ganesh");
+	   
+	   HashSet<Integer> hi = new HashSet(al);
+	   System.out.println(hi);
+	   
+	   TreeSet<Integer> ts = new TreeSet(hi);
+	   System.out.println(ts);
+	}
+}

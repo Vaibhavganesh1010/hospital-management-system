@@ -1,0 +1,15 @@
+package HMS.VGHospital.Model;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
+public class Bookappointment {
+
+	private int id;
+	private String name;
+	private String lastname;
+	private String bloodgroup;
+	private String email;
+	private String 	mobileno;
+}

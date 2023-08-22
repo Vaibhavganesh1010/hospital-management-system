@@ -1,0 +1,8 @@
+package HMS.VGHospital.Service;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class VGHService {
+
+}

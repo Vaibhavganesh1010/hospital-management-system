@@ -1,0 +1,65 @@
+package HMS.VGHospital.Controller;
+
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.web.ServerProperties.Reactive.Session;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import HMS.VGHospital.Model.Bookappointment;
+import HMS.VGHospital.Service.VGHService;
+import jakarta.transaction.Transaction;
+
+@Controller
+public class VGHController {
+
+	@Autowired
+	VGHService se;
+	
+	@RequestMapping("/")
+	public String name() {
+		return "home";
+	}
+	@RequestMapping("/drlogin")
+	public String drlogin() {
+		return "Doctor";
+	}
+
+	@RequestMapping("/doctorcreateaccount")
+	public String doctorcreateaccount() {
+		return "createdoctoraccount";
+	}
+	
+	
+	@RequestMapping("/Hpage")
+	public String Hpage() {
+		return "homepage";
+	}
+	
+	@RequestMapping("/stafflogin")
+	public String stafflogin() {
+		return "stafflogin";
+	}
+	
+	
+	@RequestMapping("/staffcreateaccount")
+	public String staffcreateaccount() {
+		return "createstaffaccount";
+	}
+	
+	@RequestMapping("/creatBA")
+	public String createBA() {
+		return "CreateBA";
+	}
+	
+	@PostMapping("/Bookappoiment")
+	public String booka(@ModelAttribute Bookappointment ba) {
+        se.booka(ba);
+		return null;
+		
+	}
+}
+
